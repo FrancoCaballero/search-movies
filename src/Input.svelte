@@ -7,7 +7,7 @@ import Movie from "./Movie.svelte"
     const handleInput = (event) => value = event.target.value
 
     $: if (value.length > 2) {
-        response = fetch(` http://www.omdbapi.com/?s=${value}&apikey=127f9fb`)
+        response = fetch(` https://www.omdbapi.com/?s=${value}&apikey=127f9fb`)
                     .then(res => !res.ok ? new Error('Algo salió mal con el api de películas') : res)
                     .then(res => res.json())
                     .then(apiResponse => apiResponse.Search || [])
